@@ -209,11 +209,8 @@ Soon, she wrote a function, `c3-major-chord` in REPL window:
 
 ```clojure
 ;; function definition
-(defn c3-major-chord
-  []
-  (piano 48)
-  (piano 55)
-  (piano 52))
+(defn c3-major-chord []
+  :???)
 ```
 
 > It's better to write your own function definitions
@@ -249,8 +246,8 @@ Since the `chord` function returns a sequence of numbers,
 the repetition should be replaced by:
 
 ```clojure
-(doseq [note (chord :c3 :major)]  ;; Sequence
-  (piano note))                   ;; Behavior
+(doseq [:???]  ;; Sequence
+  :???)        ;; Behavior
 ```
 
 The `doseq` binds the value of the first note to the `note`
@@ -269,10 +266,8 @@ the repetition by the `doseq`:
 
 ```clojure
 ;; function definition
-(defn c3-major-chord
-  []
-  (doseq [note (chord :c3 :major)]
-    (piano note)))
+(defn c3-major-chord []
+  (doseq :???))
 ```
 
 Again, looking at the function, she wondered how to make this function
@@ -289,8 +284,7 @@ She changed it to take two arguments, and gave it a more general name, `piano-ch
 ```clojure
 ;; function definition
 (defn piano-chord [root chord-name]
-  (doseq [note (chord root chord-name)]
-    (piano note)))
+  :???)
 ```
 
 Next, she wrote lines of code to use it.
@@ -325,11 +319,9 @@ Using this feature, the Meg's `piano-chord` function became like this:
 ```clojure
 (defn piano-chord
   ([root chord-name]
-    (doseq [note (chord root chord-name)]
-      (piano note)))
+    :???)
   ([root chord-name inv]
-    (doseq [note (chord root chord-name inv)]
-      (piano note))))
+    :???))
 ```
 
 The `piano-chord` function definition got two body entries,
@@ -435,12 +427,10 @@ of experimentation and testing, she wrote the up-above `function`:
 
 ```clojure
 ;; function definition
-(defn up-above
-  [start]
+(defn up-above [start]
   (let [step 650
         notes [:g3 :g3 :f3 :f3 :e3 :e3 :d3]]
-    (dotimes [i (count notes)]
-      (at (+ start (* i step)) (piano (note (nth notes i)))))))
+    (dotimes :???)))
 ```
 
 She gave the `up-above` function a `start` parameter so she could
@@ -462,10 +452,7 @@ It sounded good. The last piece was to play all, `twinkle`,
 
 ```clojure
 (let [start (now)]
-  (twinkle start)
-  (up-above (+ start 10400))
-  (up-above (+ start 15600))
-  (twinkle (+ start 20800)))
+  :???)
 ```
 
 When Meg evaluated this `let` form at the end of line,
