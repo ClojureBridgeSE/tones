@@ -30,7 +30,7 @@ using `git` command.
 Meg opened the terminal and typed the command:
 
 ```bash
-git clone https://github.com/ClojureBridge/tones.git
+git clone https://github.com/ClojureBridgeSE/tones.git
 ```
 
 > (Option) It's a good exercise to start from creating a Clojure
